@@ -173,7 +173,7 @@ session_start();
                  <div class="price-item-detail">
                     무료 예약 취소 
                 </div>
-                <button class="price-item-button">
+                <button class="price-item-button" onclick = "detail()" >
                     Click me
                 </button>
             </div>
@@ -197,7 +197,7 @@ session_start();
                  <div class="price-item-detail">
                     무료 예약 취소 
                 </div>
-                <button class="price-item-button">
+                <button class="price-item-button" onclick = "detail()">
                     Click me
                 </button>
             </div>
@@ -221,13 +221,19 @@ session_start();
                  <div class="price-item-detail">
                     무료 예약 취소 
                 </div>
-                <button class="price-item-button">
+                <button class="price-item-button" onclick = "detail()">
                     Click me
                 </button>
             </div>
         </div>
+
+        <script>
+            function detail() {
+                location.href = "detail.php";
+                }
+         </script>
     </div>
-    </div>
+    
    
     <footer>
         <div class="wrapper_l">
