@@ -67,7 +67,7 @@ session_start();
             line-height: 1.5;
             border-radius: .3rem;
             word-break : break-all;
-            width: 500px;
+            width: 400px;
             height : 50px;
         }
     </style>
@@ -108,7 +108,12 @@ session_start();
                     <div class = "comment">
                         <p>여기 너무 깔끔해요 ㅋㅋ</p>
                     </div>
+                    <div>
+                        <button> 수정 </button>
+                        <button> 삭제 </button>
+                    </div>
                 </div>
+
                 <div class = "review">
                     <div>
                         <h3>김예원</h3>
@@ -116,7 +121,13 @@ session_start();
                     <div class = "comment">
                         <p>너무 좋아요 고기 사먹어요</p>
                     </div>
+                    <div>
+                        <button> 수정 </button>
+                        <button> 삭제 </button>
+
+                    </div>
                 </div>
+
                 <div class = "review">
                     <div>
                         <h3>고광제</h3>
@@ -124,14 +135,20 @@ session_start();
                     <div class = "comment">
                         <p>또 가고 싶어요 추천 해드리고 싶네요~</p>
                     </div>
+                    <div>
+                        <button> 수정 </button>
+                        <button> 삭제 </button>
+                    </div>
                 </div>
+                <div class = "input-review">
+                    <form>
+                        <input type = "text" name = "des" size = "60" maxlength = "15">
+                        <input type='submit' value='입력'> <!-- -->
+                    </form>
             </div>
-            <div class = "input-review">
-                <form>
-                    <input type = "text" name = "des" size = "12" maxlength = "3">
-                </form>
             </div>
         </div>
+
     </div>
 
 
