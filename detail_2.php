@@ -75,18 +75,25 @@ session_start();
 <body>
     <div class="nav">
         <div class="company-name">
-            숙박업소 매칭 사이트
+        goodsleep
         </div>
     </div>
 
+    <?php
+     $conn = mysqli_connect("localhost", "root", "", "goodsleep");
+     $sql = "SELECT * FROM place WHERE P_idx = 2";
+     $result = mysqli_query($conn, $sql);
+     $row = mysqli_fetch_assoc($result);
+     ?>
     <div class = "main">
-       <h1>서울</h1>
-        <h2>신라스테이 광화문</h2>
+        <h1><?= $row['location']?></h1>
+        <h2>신라스테이 서면점</h2>
         <hr width ="100%">
         <div class = "place">
             <div class = "place-explain">
             <h3>숙소 설명</h3>
-            <p class = "reservastion">안녕하세요 신라스테이광화문 점 입니다.</p>
+            <?php echo "숙소번호 : ".$row['P_phone'] ?>
+            <p class = "reservastion"><?= $row['information']?></p>
             <p class = "reservastion_item">무료 와이파이!</p>
             <p class = "reservastion_item">호텔에서 결제!</p>
             <p class = "reservastion_item">무료 예약 취소</p>
@@ -94,7 +101,7 @@ session_start();
 
             <div class = "place-picture">
             <h3>사진</h3>
-            <img src="images/200x200.png" alt="My Image">  <!-- 사진 경로 수정 -->
+            <img src="img/images (1).jpg" alt="My Image">  <!-- 사진 경로 수정 -->
             </div>
         </div>
      

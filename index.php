@@ -176,13 +176,13 @@ session_start();
                 <?php
                     if (isset($_SESSION['userId'])) {
                     ?>
-                <button class="price-item-button"onclick = "Click_me()">
+                <button class="price-item-button" onclick = "Click_me_1()">
                     Click me
                 </button>
                 <script>
-                    function Click_me() {
-                        console.log("Click_me");
-                            location.href = "detail.php";
+                    function Click_me_1() {
+                        console.log("Click_me_1");
+                            location.href = "detail_1.php";
                     }
                 </script>
                 <?php
@@ -197,7 +197,7 @@ session_start();
                     $0 / mo
                 </div>
                 <div class="price-item-detail-top">
-                    신라스테이 광화문   
+                    신라스테이 서면   
                 </div>
                 <div class="price-item-detail">
                     무료 와이파이
@@ -212,13 +212,13 @@ session_start();
                 <?php
                     if (isset($_SESSION['userId'])) {
                     ?>
-                <button class="price-item-button"onclick = "Click_me()">
+                <button class="price-item-button"onclick = "Click_me_2()">
                     Click me
                 </button>
                 <script>
-                    function Click_me() {
-                        console.log("Click_me");
-                            location.href = "detail.php";
+                    function Click_me_2() {
+                        console.log("Click_me_2");
+                            location.href = "detail_2.php";
                     }
                 </script>
                 <?php
@@ -233,7 +233,7 @@ session_start();
                     $0 / mo
                 </div>
                 <div class="price-item-detail-top">
-                    신라스테이 광화문   
+                    신라스테이 가좌   
                 </div>
                 <div class="price-item-detail">
                     무료 와이파이
@@ -248,13 +248,13 @@ session_start();
                 <?php
                     if (isset($_SESSION['userId'])) {
                     ?>
-                <button class="price-item-button"onclick = "Click_me()">
+                <button class="price-item-button" onclick = "Click_me_3()">
                     Click me
                 </button>
                 <script>
-                    function Click_me() {
-                        console.log("Click_me");
-                            location.href = "detail.php";
+                    function Click_me_3() {
+                        console.log("Click_me_3");
+                            location.href = "detail_3.php";
                     }
                 </script>
                 <?php
