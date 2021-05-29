@@ -109,11 +109,6 @@ session_start();
             </button>
         </div>
     </div>  
-       
-
-
-
-
     <footer>
         <div class="wrapper_l">
             푸터
