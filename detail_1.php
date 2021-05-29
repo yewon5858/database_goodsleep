@@ -1,3 +1,6 @@
+<?php // git connet
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
