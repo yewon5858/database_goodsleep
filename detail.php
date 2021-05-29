@@ -90,7 +90,6 @@ session_start();
             <p class = "reservastion_item">무료 와이파이!</p>
             <p class = "reservastion_item">호텔에서 결제!</p>
             <p class = "reservastion_item">무료 예약 취소</p>
-            </pre>
             </div>
 
             <div class = "place-picture">
