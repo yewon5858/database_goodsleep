@@ -173,9 +173,21 @@ session_start();
                  <div class="price-item-detail">
                     무료 예약 취소 
                 </div>
-                <button class="price-item-button">
+                <?php
+                    if (isset($_SESSION['userId'])) {
+                    ?>
+                <button class="price-item-button"onclick = "Click_me()">
                     Click me
                 </button>
+                <script>
+                    function Click_me() {
+                        console.log("Click_me");
+                            location.href = "detail.php";
+                    }
+                </script>
+                <?php
+                    }
+                    ?>
             </div>
              <div class="price-item">
                 <div class="price-item-title">
@@ -197,9 +209,21 @@ session_start();
                  <div class="price-item-detail">
                     무료 예약 취소 
                 </div>
-                <button class="price-item-button">
+                <?php
+                    if (isset($_SESSION['userId'])) {
+                    ?>
+                <button class="price-item-button"onclick = "Click_me()">
                     Click me
                 </button>
+                <script>
+                    function Click_me() {
+                        console.log("Click_me");
+                            location.href = "detail.php";
+                    }
+                </script>
+                <?php
+                    }
+                    ?>
             </div>
              <div class="price-item">
                 <div class="price-item-title">
@@ -221,9 +245,22 @@ session_start();
                  <div class="price-item-detail">
                     무료 예약 취소 
                 </div>
-                <button class="price-item-button">
+                <?php
+                    if (isset($_SESSION['userId'])) {
+                    ?>
+                <button class="price-item-button"onclick = "Click_me()">
                     Click me
                 </button>
+                <script>
+                    function Click_me() {
+                        console.log("Click_me");
+                            location.href = "detail.php";
+                    }
+                </script>
+                <?php
+                    }
+                    ?>
+
             </div>
         </div>
     </div>
@@ -234,7 +271,7 @@ session_start();
             푸터
         </div>
     </footer>
-
+    
 </body>
 
 </html>

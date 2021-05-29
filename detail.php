@@ -86,11 +86,10 @@ session_start();
         <div class = "place">
             <div class = "place-explain">
             <h3>숙소 설명</h3>
-            <pre class="lead">무료 와이파이!
-
-호텔에서 결제!
-
-무료 예약 취소
+            <p class = "reservastion">안녕하세요 신라스테이광화문 점 입니다.</p>
+            <p class = "reservastion_item">무료 와이파이!</p>
+            <p class = "reservastion_item">호텔에서 결제!</p>
+            <p class = "reservastion_item">무료 예약 취소</p>
             </pre>
             </div>
 
