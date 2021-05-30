@@ -1,6 +1,5 @@
 <?php // git connet
 session_start(); 
-$detail_position = $_POST['pos'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,12 +76,6 @@ $detail_position = $_POST['pos'];
 </head>
 
 <body>
-    <?php
-     $conn = mysqli_connect("localhost", "root", "", "goodsleep");
-     $sql = "SELECT * FROM place WHERE P_idx = $detail_position";
-     $result = mysqli_query($conn, $sql);
-     $row = mysqli_fetch_assoc($result);
-     ?>
     <div class="nav">
         <div class="company-name">
             숙박업소 매칭 사이트
@@ -129,12 +122,7 @@ $detail_position = $_POST['pos'];
         </div>
 
     </div>
-
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 2813583d9673b84ea005b828183d99702ffaa07b
+ 
     <footer>
         <div class="wrapper_l">
             푸터
