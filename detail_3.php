@@ -93,7 +93,7 @@ session_start();
         <div class = "place">
             <div class = "place-explain">
             <h3>숙소 설명</h3>
-            <?php echo "숙소번호 : ".$row['P_phone'] ?>
+            <?php echo "전화번호 : ".$row['P_phone'] ?>
             <p class = "reservastion"><?= $row['information']?></p>
         </div>
 
@@ -127,7 +127,10 @@ session_start();
 
         function reservation() {
             console.log("reservation");
-            location.href = "reservation.php";
+            <?php
+            $_SESSION['placePos'] = '3';
+            ?>
+            location.href = "reservation_check.php";
         }
     </script>
 </body>

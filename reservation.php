@@ -56,7 +56,18 @@ session_start();
         .complete{
             text-align:center;
         }
-        
+        .button-find{
+            text-align:center;
+            padding : .5rem 1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: .3rem;
+            color: #007bff;
+            background-color: transparent;
+            background-image: none;
+            border-color: #007bff;
+            margin-top : 10px;
+        }
         
     </style>
 </head>
@@ -102,11 +113,13 @@ session_start();
 
         <div class = "complete">
             <h3><br></h3>
-            <h1>예약 완료</h1>
+            <button class="button-find" onclick ="location.href= 'index.php'" >
+             메인으로 가기
+            </button>
         </div>
 
     </div>
-    
+
     
     <footer>
         <div class="wrapper_l">

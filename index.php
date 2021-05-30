@@ -105,7 +105,7 @@ session_start();
 <body>
      <div class="nav">
         <div class="company-name">
-            숙박업소 매칭 사이트
+        <a href="index.php" style="text-decoration:none">goodsleep</a>
         </div>
             <div class="nav-right-items">
                           
@@ -114,7 +114,9 @@ session_start();
                     if (isset($_SESSION['userId'])) {
                         echo "{$_SESSION['userId']}님 환영합니다  ";
                     ?>
+                        <button class="nav-item d-flex align-items-center">마이페이지</li>                    
                         <button class="nav-item d-flex align-items-center" onclick="logout()">로그아웃</li>
+                      
                     <?php
                     } else {
                     ?>
