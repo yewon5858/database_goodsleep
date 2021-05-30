@@ -75,7 +75,7 @@ session_start();
 <body>
     <div class="nav">
         <div class="company-name">
-        goodsleep
+        <a href="index.php" style="text-decoration:none">goodsleep</a>
         </div>
     </div>
 
@@ -94,9 +94,6 @@ session_start();
             <h3>숙소 설명</h3>
             <?php echo "숙소번호 : ".$row['P_phone'] ?>
             <p class = "reservastion"><?= $row['information']?></p>
-            <p class = "reservastion_item">무료 와이파이!</p>
-            <p class = "reservastion_item">호텔에서 결제!</p>
-            <p class = "reservastion_item">무료 예약 취소</p>
             </div>
 
             <div class = "place-picture">
