@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "11111111", "goodsleep");
+$conn = mysqli_connect("localhost", "root", "", "goodsleep");
 //아이디 비교와 비밀번호 비교가 필요한 시점이다.
 // 1차로 DB에서 비밀번호를 가져온다 
 // 평문의 비밀번호와 암호화된 비밀번호를 비교해서 검증한다.

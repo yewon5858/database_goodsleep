@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "11111111", "goodsleep");
+$conn = mysqli_connect("localhost", "root", "", "goodsleep");
 $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 $sql = "

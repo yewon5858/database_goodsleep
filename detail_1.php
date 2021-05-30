@@ -80,7 +80,7 @@ session_start();
     </div>
 
     <?php
-     $conn = mysqli_connect("localhost", "root", "11111111", "goodsleep");
+     $conn = mysqli_connect("localhost", "root", "", "goodsleep");
      $sql = "SELECT * FROM place WHERE P_idx = 1";
      $result = mysqli_query($conn, $sql);
      $row = mysqli_fetch_assoc($result);
@@ -133,11 +133,7 @@ session_start();
             <?php
             $_SESSION['placePos'] = '1';
             ?>
-<<<<<<< HEAD
-            location.href = "reservation.php";
-=======
             location.href = "reservation_check.php";
->>>>>>> 2813583d9673b84ea005b828183d99702ffaa07b
         }
     </script>
 </body>
