@@ -1,5 +1,6 @@
 <?php // git connet
 session_start(); 
+$conn = mysqli_connect("localhost", "root", "11111111", "goodsleep");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,14 +54,14 @@ session_start();
 
     .resv-box1 {
         width: 300px;
-        height: 600px;
+        height: 500px;
 
         border-right: solid 1px;
     }
 
     .resv-box2 {
         width: 600px;
-        height: 600px;
+        height: 500px;
         margin-left: 100px;
 
     }
@@ -74,6 +75,11 @@ session_start();
         word-break: break-all;
         margin-bottom: 50px;
 
+    }
+
+    .review-list {
+        width: 600px;
+        height: 300px;
     }
 
     .edit-button {
@@ -121,7 +127,7 @@ session_start();
 </head>
 
 <body>
-
+   
     <div class="nav">
         <div class="company-name">
             숙박업소 매칭 사이트
@@ -151,52 +157,36 @@ session_start();
             <div class="resv-box2">
                 <h3>리뷰 내용</h3>
                 <h1><br></h1>
+                <div class="review-list" style="overflow:scroll">
+                    <?php
+                        $sql = "SELECT * FROM comment ";
+                        $result = mysqli_query($conn, $sql);
 
-                <div class="review">
-                    <div>
-                        <h3>강민규</h3>
-                    </div>
-                    <div class="comment">
-                        <p>여기 너무 깔끔해요 ㅋㅋ</p>
-                    </div>
-                    <div>
-                        <button class="edit-button"> 수정 </button>
-                        <button class="edit-button"> 삭제 </button>
-                    </div>
+                        while($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                            <div class="review">
+                                <div>
+                                    <h3> <?= $row["U_idx"] ?> </h3>
+                                </div>
+                                <div class="comment"> 
+                                    <?= $row["text"] ?>
+                                </div>
+                            
+                                <div>
+                                
+                                    <button class='edit-button' value = '<?= $row["C_idx"]?>' onclick = editButton(this.value)> 수정</button>
+                                    <button class='edit-button' value = '<?= $row["C_idx"]?>' onclick = deleteButton(this.value)> 삭제</button>
+                                
+                                </div>
+                            </div>
+                    <?php
+                        }
+                    ?>
+                    
                 </div>
-
-                <div class="review">
-                    <div>
-                        <h3>김예원</h3>
-                    </div>
-                    <div class="comment">
-                        <p>너무 좋아요 고기 사먹어요</p>
-                    </div>
-                    <div>
-                        <button class="edit-button"> 수정 </button>
-                        <button class="edit-button"> 삭제 </button>
-
-                    </div>
-                </div>
-
-                <div class="review">
-
-                    <div>
-                        <h3>고광제</h3>
-                    </div>
-                    <div class="comment">
-                        <p>또 가고 싶어요 추천 해드리고 싶네요~</p>
-                    </div>
-                    <div>
-                        <button class="edit-button"> 수정 </button>
-                        <button class="edit-button"> 삭제 </button>
-                    </div>
-
-                </div>
-
                 <div class="input-review">
                     <form action="reviewProcess.php" method="POST" id="review-form">
-                        <textarea type='text' id="new-comment" rows=2 placeholder="New Comment"></textarea>
+                        <textarea type='text' name='text' id="new-comment" rows=2 placeholder="New Comment"></textarea>
                         <Button type='submit' id="comment-button"> 입력 </Button>
                     </form>
                 </div>
@@ -211,15 +201,62 @@ session_start();
         <div class="wrapper_l">
             푸터
         </div>
-    </footer> <!-- -->
-    <script>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+    
     const reviewForm = document.querySelector("#review-form");
     const reviewButton = document.querySelector("#comment-button");
     const comment = document.querySelector("#new-comment");
-    signupButton.addEventListener("click", function(e) {
+    reviewButton.addEventListener("click", function(e) {
         reviewForm.submit();
     });
+
+    
+
+    function editButton(value){
+        var inputString = prompt('댓글을 입력하세요');
+        sql = "UPDATE comment SET text = '" + inputString + "' WHERE C_idx = '" + value + "' ";
+        console.log(sql);
+
+        $.ajax({
+                type: 'post',
+                url: 'edit_delete.php',
+                datatype:'string',
+                data: {sql},
+                success: function(result) {
+                    
+                }
+            });
+        alert('수정 되었습니다.');
+        location.reload(); // 새로고침
+
+    }
+
+    function deleteButton(value){
+        sql = "DELETE FROM comment WHERE C_idx ='" + value +"'";
+        console.log(sql);
+
+        $.ajax({
+                type: 'post',
+                url: 'edit_delete.php',
+                datatype:'string',
+                data: {sql},
+                success: function(result) {
+                    
+                }
+            });
+        alert('삭제 되었습니다.');
+        location.reload();
+
+    }
+    
     </script>
+
+
 </body>
 
 </html>
