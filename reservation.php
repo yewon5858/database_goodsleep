@@ -130,11 +130,8 @@ $detail_position = $_POST['pos'];
 
     </div>
 
-<<<<<<< HEAD
 
-=======
     
->>>>>>> 2813583d9673b84ea005b828183d99702ffaa07b
     <footer>
         <div class="wrapper_l">
             푸터

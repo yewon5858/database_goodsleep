@@ -155,7 +155,7 @@ session_start();
 
         </div>
         <?php
-            $conn = mysqli_connect("localhost", "root", "", "goodsleep");
+            $conn = mysqli_connect("localhost", "root", "11111111", "goodsleep");
             $sql = "SELECT * FROM place";
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result);
@@ -192,7 +192,7 @@ session_start();
             </div>
             <?php
             $row = mysqli_fetch_assoc($result);
-        ?>
+            ?>
              <div class="price-item">
                 <div class="price-item-title">
                     <?= $row['location']?>
@@ -224,7 +224,7 @@ session_start();
             </div>
             <?php
             $row = mysqli_fetch_assoc($result);
-        ?>
+            ?>
              <div class="price-item">
                 <div class="price-item-title">
                     <?= $row['location']?>
@@ -252,7 +252,7 @@ session_start();
                 </script>
                 <?php
                     }
-                    ?>
+                ?>
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-$conn = mysqli_connect("localhost", "root", "", "goodsleep"); //데이터 베이스 접속
+$conn = mysqli_connect("localhost", "root", "11111111", "goodsleep"); //데이터 베이스 접속
 echo $_POST['fromDate'] . $_POST['toDate'] ;
 $userId = $_SESSION['userId'];
 $placePos = $_SESSION['placePos'];

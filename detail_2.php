@@ -132,11 +132,7 @@ session_start();
             <?php
             $_SESSION['placePos'] = '2';
             ?>
-<<<<<<< HEAD
-            location.href = "reservation.php";
-=======
             location.href = "reservation_check.php";
->>>>>>> 2813583d9673b84ea005b828183d99702ffaa07b
         }
     </script>
 </body>
