@@ -192,7 +192,7 @@ session_start();
             </div>
             <?php
             $row = mysqli_fetch_assoc($result);
-        ?>
+            ?>
              <div class="price-item">
                 <div class="price-item-title">
                     <?= $row['location']?>
@@ -224,7 +224,7 @@ session_start();
             </div>
             <?php
             $row = mysqli_fetch_assoc($result);
-        ?>
+            ?>
              <div class="price-item">
                 <div class="price-item-title">
                     <?= $row['location']?>
@@ -253,7 +253,7 @@ session_start();
                 <?php
                 //완료
                     }
-                    ?>
+                ?>
             </div>
         </div>
     </div>
