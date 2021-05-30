@@ -1,6 +1,6 @@
 <?php // git connet
 session_start(); 
-$conn = mysqli_connect("localhost", "root", "11111111", "goodsleep");
+$conn = mysqli_connect("localhost", "root", "", "goodsleep");
 ?>
 <!DOCTYPE html>
 <html lang="en">

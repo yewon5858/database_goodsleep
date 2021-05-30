@@ -80,7 +80,7 @@ session_start();
     </div>
 
     <?php
-     $conn = mysqli_connect("localhost", "root", "11111111", "goodsleep");
+     $conn = mysqli_connect("localhost", "root", "", "goodsleep");
      $sql = "SELECT * FROM place WHERE P_idx = 2";
      $result = mysqli_query($conn, $sql);
      $row = mysqli_fetch_assoc($result);

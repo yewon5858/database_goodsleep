@@ -155,7 +155,7 @@ session_start();
 
         </div>
         <?php
-            $conn = mysqli_connect("localhost", "root", "11111111", "goodsleep");
+            $conn = mysqli_connect("localhost", "root", "", "goodsleep");
             $sql = "SELECT * FROM place";
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result);
@@ -251,6 +251,7 @@ session_start();
                     }
                 </script>
                 <?php
+                //완료
                     }
                 ?>
             </div>

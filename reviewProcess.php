@@ -1,7 +1,7 @@
 <?php
 session_start();
     
-$conn = mysqli_connect("localhost", "root", "11111111", "goodsleep");
+$conn = mysqli_connect("localhost", "root", "", "goodsleep");
 $userId = $_SESSION['userId'];
 $pos = $_SESSION['placePos'];
 
