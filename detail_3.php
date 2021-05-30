@@ -80,7 +80,7 @@ session_start();
     </div>
 
     <?php
-     $conn = mysqli_connect("localhost", "root", "", "goodsleep");
+     $conn = mysqli_connect("localhost", "root", "11111111", "goodsleep");
      $sql = "SELECT * FROM place WHERE P_idx = 3";
      $result = mysqli_query($conn, $sql);
      $row = mysqli_fetch_assoc($result);
@@ -122,6 +122,9 @@ session_start();
     <script>
         function review() {
             console.log("review");
+            <?php
+            $_SESSION['placePos'] = '3';
+            ?>
             location.href = "review.php";
         }
 
@@ -130,7 +133,11 @@ session_start();
             <?php
             $_SESSION['placePos'] = '3';
             ?>
+<<<<<<< HEAD
+            location.href = "reservation.php";
+=======
             location.href = "reservation_check.php";
+>>>>>>> 2813583d9673b84ea005b828183d99702ffaa07b
         }
     </script>
 </body>

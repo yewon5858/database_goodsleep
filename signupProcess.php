@@ -1,7 +1,7 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "goodsleep");
+$conn = mysqli_connect("localhost", "root", "11111111", "goodsleep");
 $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-echo $hashedPassword;
+
 $sql = "
     INSERT INTO user
     (email, password)
@@ -15,10 +15,10 @@ if ($result === false) {
     echo mysqli_error($conn);
 } else {
 ?>
-    <script>
-        alert("회원가입이 완료되었습니다");
-        location.href = "index.php";
-    </script>
+<script>
+    alert("회원가입이 완료되었습니다");
+    location.href = "index.php";
+</script>
 <?php
 }
 ?>
