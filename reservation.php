@@ -16,59 +16,63 @@ $detail_position = $_POST['pos'];
         integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous">
     </script>
     <style>
-    .nav {
-        height: 70px;
-        border - bottom: 1px solid black;
-        display: flex;
-        align-items: center;
-    }
-
-    .nav-right-items {
-        display: flex;
-        margin-left: auto;
-    }
-
-    .nav-item {
-        margin-left: 10px;
-    }
-
-    .company-name {
-        margin-left: 20px;
-    }
-
-    .main {
-        width: 1000px;
-        margin: 0 auto;
-        margin-top: 60px;
-    }
-
-    .res-title {
-        display: flex;
-        justify-content: center;
-
-    }
-
-    .place {
-        display: flex;
-    }
-
-    .resv-box1 {
-        width: 500px;
-        height: 350px;
-        text-align: center;
-        border-right: solid 1px;
-    }
-
-    .resv-box2 {
-        width: 500px;
-        height: 350px;
-        text-align: center;
-
-    }
-
-    .complete {
-        text-align: center;
-    }
+      .nav{
+            height: 70px;
+            border - bottom: 1px solid black;
+            display: flex;
+            align-items: center;
+        }
+         .nav-right-items{
+            display: flex;
+            margin-left: auto;
+        }
+        .nav-item{
+            margin-left: 10px;
+        }
+        .company-name{
+            margin-left: 20px;
+        }
+       .main{
+            width: 1000px;
+            margin: 0 auto; 
+            margin-top: 60px;
+        }
+        .res-title{
+            display : flex;
+            justify-content: center;
+           
+        }
+        .place{
+            display : flex;
+        }
+        .resv-box1{
+            width : 500px;
+            height : 350px;
+            text-align:center;
+            border-right: solid 1px;
+        }
+        .resv-box2{
+            width : 500px;
+            height : 350px;
+            text-align:center;
+        
+        }
+        .complete{
+            text-align:center;
+        }
+        .button-find{
+            text-align:center;
+            padding : .5rem 1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: .3rem;
+            color: #007bff;
+            background-color: transparent;
+            background-image: none;
+            border-color: #007bff;
+            margin-top : 10px;
+        }
+        
     </style>
 </head>
 
@@ -119,12 +123,18 @@ $detail_position = $_POST['pos'];
 
         <div class="complete">
             <h3><br></h3>
-            <h1>예약 완료</h1>
+            <button class="button-find" onclick ="location.href= 'index.php'" >
+             메인으로 가기
+            </button>
         </div>
 
     </div>
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 2813583d9673b84ea005b828183d99702ffaa07b
     <footer>
         <div class="wrapper_l">
             푸터

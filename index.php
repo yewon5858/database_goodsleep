@@ -70,7 +70,7 @@ session_start();
         .price-item-price{
             font-size: 2.5rem;
             font-weight: bold;
-            padding: 20px;
+            padding: 10px;
         }
 
         .price-item-button{
@@ -82,7 +82,7 @@ session_start();
             background-color: transparent;
             background-image: none;
             border-color: #007bff;
-            margin-top : 30px;
+            margin-top : 10px;
         }
         .price-item-detail-top{
             font-size: 20px;
@@ -105,7 +105,7 @@ session_start();
 <body>
      <div class="nav">
         <div class="company-name">
-            숙박업소 매칭 사이트
+        <a href="index.php" style="text-decoration:none">goodsleep</a>
         </div>
             <div class="nav-right-items">
                           
@@ -114,7 +114,9 @@ session_start();
                     if (isset($_SESSION['userId'])) {
                         echo "{$_SESSION['userId']}님 환영합니다  ";
                     ?>
+                        <button class="nav-item d-flex align-items-center">마이페이지</li>                    
                         <button class="nav-item d-flex align-items-center" onclick="logout()">로그아웃</li>
+                      
                     <?php
                     } else {
                     ?>
@@ -152,10 +154,16 @@ session_start();
             누구나 마음편히 놀 수 있게 [용기를] 주는 회사
 
         </div>
+        <?php
+            $conn = mysqli_connect("localhost", "root", "", "goodsleep");
+            $sql = "SELECT * FROM place";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($result);
+        ?>
         <div class="prices">
             <div class="price-item">
                 <div class="price-item-title">
-                    서울
+                <?= $row['location']?>
                 </div>
                 <div class="price-item-price">
                     $0 / mo
@@ -164,14 +172,7 @@ session_start();
                     신라스테이 광화문   
                 </div>
                 <div class="price-item-detail">
-                    무료 와이파이
-                      
-                </div>
-                 <div class="price-item-detail">
-                    호텔에서 결제
-                </div>
-                 <div class="price-item-detail">
-                    무료 예약 취소 
+                   <?= $row['information']?>
                 </div>
                 <?php
                     if (isset($_SESSION['userId'])) {
@@ -189,9 +190,12 @@ session_start();
                     }
                     ?>
             </div>
+            <?php
+            $row = mysqli_fetch_assoc($result);
+        ?>
              <div class="price-item">
                 <div class="price-item-title">
-                    부산
+                    <?= $row['location']?>
                 </div>
                 <div class="price-item-price">
                     $0 / mo
@@ -200,14 +204,7 @@ session_start();
                     신라스테이 서면   
                 </div>
                 <div class="price-item-detail">
-                    무료 와이파이
-                      
-                </div>
-                 <div class="price-item-detail">
-                    호텔에서 결제
-                </div>
-                 <div class="price-item-detail">
-                    무료 예약 취소 
+                    <?= $row['information']?>
                 </div>
                 <?php
                     if (isset($_SESSION['userId'])) {
@@ -225,9 +222,12 @@ session_start();
                     }
                     ?>
             </div>
+            <?php
+            $row = mysqli_fetch_assoc($result);
+        ?>
              <div class="price-item">
                 <div class="price-item-title">
-                    진주
+                    <?= $row['location']?>
                 </div>
                 <div class="price-item-price">
                     $0 / mo
@@ -236,14 +236,7 @@ session_start();
                     신라스테이 가좌   
                 </div>
                 <div class="price-item-detail">
-                    무료 와이파이
-                      
-                </div>
-                 <div class="price-item-detail">
-                    호텔에서 결제
-                </div>
-                 <div class="price-item-detail">
-                    무료 예약 취소 
+                    <?= $row['information']?>
                 </div>
                 <?php
                     if (isset($_SESSION['userId'])) {
