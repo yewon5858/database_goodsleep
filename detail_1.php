@@ -28,7 +28,7 @@ session_start();
         .company-name{
             margin-left: 20px;
         }
-       .main{
+       .detail_main{
             width: 1000px;
             margin: 0 auto; 
             margin-top: 60px;
@@ -86,9 +86,8 @@ session_start();
      $row = mysqli_fetch_assoc($result);
      ?>
 
-    <div class = "main">
+    <div class = "detail_main">
        <h1><?= $row['location']?></h1>
-        <h2>신라스테이 광화문</h2>
         <hr width ="100%">
         <div class = "place">
             <div class = "place-explain">

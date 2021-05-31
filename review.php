@@ -4,6 +4,7 @@ $conn = mysqli_connect("localhost", "root", "", "goodsleep");
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<!-------헤드 부분 시작------->
 
 <head>
     <meta charset="UTF-8">
@@ -123,11 +124,18 @@ $conn = mysqli_connect("localhost", "root", "", "goodsleep");
         position: relative;
         bottom: 20px;
     }
+    .information{
+        width : 300px;
+        height : 200px;
+        word-break : keep-all;
+
+    }
     </style>
 </head>
+<!-------헤드 부분 끝------->
 
 <body>
-   
+
     <div class="nav">
         <div class="company-name">
             숙박업소 매칭 사이트
@@ -135,54 +143,58 @@ $conn = mysqli_connect("localhost", "root", "", "goodsleep");
     </div>
 
     <div class="main">
-        <script>
-
-        </script>
-
         <div class="place">
             <div class="resv-box1">
                 <h3>숙소 정보</h3>
                 <h1><br></h1>
-                <h1>서울 </h1>
-                <h2>신라스테이 광화문</h2>
+                <?php
+                    $detailPos = $_SESSION['placePos'];
+                    
+                    $sql = "SELECT * FROM place WHERE P_idx = '$detailPos'";
+                    $result = mysqli_query($conn,$sql);
+
+                    $row = mysqli_fetch_assoc($result)
+                ?>
+                <h1><?= $row["location"]?> </h1>
+                <h2><?= $row["P_phone"]?> </h2>
                 <h3>숙소 설명</h3>
-                <pre class="lead">무료 와이파이!
-
-호텔에서 결제!
-
-무료 예약 취소
-            </pre>
+                <p class = "information">
+                    <?=   $row["information"] ?>
+                <p>
             </div>
+            
 
             <div class="resv-box2">
                 <h3>리뷰 내용</h3>
                 <h1><br></h1>
                 <div class="review-list" style="overflow:scroll">
                     <?php
-                        $sql = "SELECT * FROM comment ";
+                        $sql = "SELECT * FROM comment WHERE P_idx = '$detailPos'";
                         $result = mysqli_query($conn, $sql);
 
                         while($row = mysqli_fetch_assoc($result)) {
                     ?>
-                            <div class="review">
-                                <div>
-                                    <h3> <?= $row["U_idx"] ?> </h3>
-                                </div>
-                                <div class="comment"> 
-                                    <?= $row["text"] ?>
-                                </div>
-                            
-                                <div>
-                                
-                                    <button class='edit-button' value = '<?= $row["C_idx"]?>' onclick = editButton(this.value)> 수정</button>
-                                    <button class='edit-button' value = '<?= $row["C_idx"]?>' onclick = deleteButton(this.value)> 삭제</button>
-                                
-                                </div>
-                            </div>
+                    <div class="review">
+                        <div>
+                            <h3> <?= $row["U_idx"] ?> </h3>
+                        </div>
+                        <div class="comment">
+                            <?= $row["text"] ?>
+                        </div>
+
+                        <div>
+
+                            <button class='edit-button' value='<?= $row["C_idx"]?>' onclick=editButton(this.value)>
+                                수정</button>
+                            <button class='edit-button' value='<?= $row["C_idx"]?>' onclick=deleteButton(this.value)>
+                                삭제</button>
+
+                        </div>
+                    </div>
                     <?php
                         }
                     ?>
-                    
+
                 </div>
                 <div class="input-review">
                     <form action="reviewProcess.php" method="POST" id="review-form">
@@ -207,7 +219,6 @@ $conn = mysqli_connect("localhost", "root", "", "goodsleep");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript">
-    
     const reviewForm = document.querySelector("#review-form");
     const reviewButton = document.querySelector("#comment-button");
     const comment = document.querySelector("#new-comment");
@@ -215,45 +226,48 @@ $conn = mysqli_connect("localhost", "root", "", "goodsleep");
         reviewForm.submit();
     });
 
-    
 
-    function editButton(value){
+
+    function editButton(value) {
         var inputString = prompt('댓글을 입력하세요');
         sql = "UPDATE comment SET text = '" + inputString + "' WHERE C_idx = '" + value + "' ";
         console.log(sql);
 
         $.ajax({
-                type: 'post',
-                url: 'edit_delete.php',
-                datatype:'string',
-                data: {sql},
-                success: function(result) {
-                    
-                }
-            });
+            type: 'post',
+            url: 'edit_delete.php',
+            datatype: 'string',
+            data: {
+                sql
+            },
+            success: function(result) {
+
+            }
+        });
         alert('수정 되었습니다.');
         location.reload(); // 새로고침
 
     }
 
-    function deleteButton(value){
-        sql = "DELETE FROM comment WHERE C_idx ='" + value +"'";
+    function deleteButton(value) {
+        sql = "DELETE FROM comment WHERE C_idx ='" + value + "'";
         console.log(sql);
 
         $.ajax({
-                type: 'post',
-                url: 'edit_delete.php',
-                datatype:'string',
-                data: {sql},
-                success: function(result) {
-                    
-                }
-            });
+            type: 'post',
+            url: 'edit_delete.php',
+            datatype: 'string',
+            data: {
+                sql
+            },
+            success: function(result) {
+
+            }
+        });
         alert('삭제 되었습니다.');
         location.reload();
 
     }
-    
     </script>
 
 

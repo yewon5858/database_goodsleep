@@ -168,9 +168,6 @@ session_start();
                 <div class="price-item-price">
                     $0 / mo
                 </div>
-                <div class="price-item-detail-top">
-                    신라스테이 광화문   
-                </div>
                 <div class="price-item-detail">
                    <?= $row['information']?>
                 </div>
@@ -200,9 +197,6 @@ session_start();
                 <div class="price-item-price">
                     $0 / mo
                 </div>
-                <div class="price-item-detail-top">
-                    신라스테이 서면   
-                </div>
                 <div class="price-item-detail">
                     <?= $row['information']?>
                 </div>
@@ -231,9 +225,6 @@ session_start();
                 </div>
                 <div class="price-item-price">
                     $0 / mo
-                </div>
-                <div class="price-item-detail-top">
-                    신라스테이 가좌   
                 </div>
                 <div class="price-item-detail">
                     <?= $row['information']?>
