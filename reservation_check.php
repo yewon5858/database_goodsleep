@@ -174,7 +174,7 @@ session_start();
             </div>
         </div>
         <div class = "resv-complete">
-                        <button type= "submit" form = "reservation_ok" name="submit" class="complete" >예약완료</button>
+                        <button type= "submit" form = "reservation_ok" name="submit" class="complete">예약완료</button>
                     </div>
     </div>
     

@@ -114,7 +114,7 @@ session_start();
                     if (isset($_SESSION['userId'])) {
                         echo "{$_SESSION['userId']}님 환영합니다  ";
                     ?>
-                        <button class="nav-item d-flex align-items-center">마이페이지</li>                    
+                        <button class="nav-item d-flex align-items-center"onclick="location.href= 'my_page.php'">마이페이지</li>                    
                         <button class="nav-item d-flex align-items-center" onclick="logout()">로그아웃</li>
                       
                     <?php
@@ -168,6 +168,9 @@ session_start();
                 <div class="price-item-price">
                     $0 / mo
                 </div>
+                <div class="price-item-detail-top">
+                 <?= $row['name']?>   
+                </div>
                 <div class="price-item-detail">
                    <?= $row['information']?>
                 </div>
@@ -197,6 +200,9 @@ session_start();
                 <div class="price-item-price">
                     $0 / mo
                 </div>
+                <div class="price-item-detail-top">
+                    <?= $row['name']?>
+                </div>
                 <div class="price-item-detail">
                     <?= $row['information']?>
                 </div>
@@ -225,6 +231,9 @@ session_start();
                 </div>
                 <div class="price-item-price">
                     $0 / mo
+                </div>
+                <div class="price-item-detail-top">
+                    <?= $row['name']?>  
                 </div>
                 <div class="price-item-detail">
                     <?= $row['information']?>
