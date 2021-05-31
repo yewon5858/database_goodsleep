@@ -15,8 +15,8 @@ echo $row[0];
 
 $sql = "
     INSERT INTO reservation
-    (U_idx,P_idx,checkin, checkout,reservation)
-    VALUES('{$row[0]}',1,'{$_POST['fromDate']}','{$_POST['toDate']}',1
+    (U_idx,P_idx,checkin, checkout)
+    VALUES('{$row[0]}','{$_SESSION['placePos']}','{$_POST['fromDate']}','{$_POST['toDate']}'
     )";
 echo $sql;
 $result = mysqli_query($conn, $sql);

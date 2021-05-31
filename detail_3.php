@@ -88,7 +88,7 @@ session_start();
 
     <div class = "main">
         <h1><?= $row['location']?></h1>
-        <h2>신라스테이 가좌점</h2>
+        <h2><?= $row['name']?></h2>
         <hr width ="100%">
         <div class = "place">
             <div class = "place-explain">
